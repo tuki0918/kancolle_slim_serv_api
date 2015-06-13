@@ -8,4 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     $vendorDir . '/danielstjules/stringy/src/Create.php',
     $vendorDir . '/illuminate/support/helpers.php',
+    $baseDir . '/app/Config/define.php',
+    $baseDir . '/app/Config/iniset.php',
+    $baseDir . '/app/Config/database.php',
 );
