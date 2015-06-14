@@ -13,7 +13,7 @@ class UserController extends AppController
         $users = User::all();
 
         $this->app->render(
-            'user.index.php',
+            'user.index.twig',
             compact('users')
         );
 
