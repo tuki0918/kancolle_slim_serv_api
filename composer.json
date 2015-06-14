@@ -2,7 +2,8 @@
     "require": {
         "slim/slim": "~2.0",
         "illuminate/database": "*",
-        "monolog/monolog": "~1.13"
+        "monolog/monolog": "~1.13",
+        "slim/views": "0.1.*"
     },
     "autoload": {
         "files": [
