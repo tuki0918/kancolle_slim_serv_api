@@ -14,6 +14,16 @@ $app->configureMode('development', function () use ($app) {
     $app->config('debug', true);
 });
 
+// View template
+$view = $app->view();
+$view->parserOptions = array(
+    'debug' => true,
+    'cache' => VIEW_PATH . '/cache'
+);
+$view->parserExtensions = array(
+    new Slim\Views\TwigExtension()
+);
+
 // Logging setup
 $app->container->singleton('log', function () {
     $log = new Monolog\Logger(APP_NAME);

@@ -2,7 +2,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$app = new Slim\Slim();
+$app = new Slim\Slim(array(
+    'view' => new Slim\Views\Twig()
+));
 
 // application setup
 require_once CONFIG_PATH . '/application.php';
