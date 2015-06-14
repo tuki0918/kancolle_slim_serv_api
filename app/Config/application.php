@@ -1,7 +1,7 @@
 <?php
 
 // common settings
-$app->config('mode', 'production');
+$app->config('mode', APP_MODE);
 $app->config('templates.path', VIEW_PATH);
 
 // if mode is "production"

@@ -6,6 +6,10 @@ define('DB_NAME', '****');
 define('DB_USER', '****');
 define('DB_PASS', '****');
 
+// Application Infomation
+define('APP_NAME'      , 'slim');
+define('APP_MODE'      , 'production');
+
 // Directory Path
 define('BASE_PATH'     , realpath(__DIR__ . '/../..'));
 define('APP_PATH'      , BASE_PATH . '/app');
