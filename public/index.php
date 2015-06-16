@@ -8,7 +8,8 @@ $app = new Slim\Slim();
 require_once CONFIG_PATH . '/application.php';
 
 // application routing setup
-require_once ROUTE_PATH . '/default.php';
-require_once ROUTE_PATH . '/error.php';
+foreach (glob(ROUTE_PATH . '/site.*.php') as $inc) {
+    require_once $inc;
+}
 
 $app->run();
