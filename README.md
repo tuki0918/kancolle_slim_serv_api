@@ -50,5 +50,24 @@ chmod 777 logs, app/View/cache
 
 #### マイグレーション
 ```
+// ステータスの確認
 bin/phpmig status
+
+// マイグレーションファイルの作成
+bin/phpmig generate [MigrationName]
+
+// マイグレーションの実行
+bin/phpmig migration
+
+// １つ戻る
+bin/phpmig rollback
+
+// すべて戻る
+bin/phpmig rollback -t 0
+
+// 指定のMigrationIDの完了時点まで戻る
+bin/phpmig rollback -t [MigrationID]
+
+// 指定のMigrationIDのみをマイグレーション/ロールバック
+bin/phpmig [up|down] [MigrationID]
 ```
