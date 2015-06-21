@@ -25,7 +25,7 @@ php -f command.php [command1 [, command2 [, ...]]]
 #### 設定：環境設定
 + app/Config/define.php
 + app/Config/iniset.php
-+ app/Config/database.php
++ app/Config/eloquent.php
 
 
 #### サードパーティライブラリ
