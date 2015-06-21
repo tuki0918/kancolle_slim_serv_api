@@ -21,5 +21,6 @@ $container['phpmig.adapter'] = $container->share(function($c) {
 });
 
 $container['phpmig.migrations_path'] = __DIR__ . DIRECTORY_SEPARATOR . 'migrations';
+$container['phpmig.migrations_template_path'] = $container['phpmig.migrations_path'] . DIRECTORY_SEPARATOR . '.template.php';
 
 return $container;
