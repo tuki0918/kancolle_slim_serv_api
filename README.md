@@ -1,6 +1,10 @@
 Slim Framework in Micro MVC
 ----
 
+#### DocumentRoot
++ public
+
+
 #### コマンドライン：実行
 ```
 php -f command.php [command1 [, command2 [, ...]]]
