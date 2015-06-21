@@ -4,7 +4,9 @@
         "illuminate/database": "4.*",
         "monolog/monolog": "~1.13",
         "slim/views": "0.1.*",
-        "twig/twig": "~1.0"
+        "twig/twig": "~1.0",
+        "davedevelopment/phpmig": "*",
+        "pimple/pimple": "1.*"
     },
     "autoload": {
         "files": [
@@ -15,5 +17,8 @@
         "psr-4": {
             "App\\": "app/"
         }
+    },
+    "config": {
+        "bin-dir": "bin/"
     }
 }
