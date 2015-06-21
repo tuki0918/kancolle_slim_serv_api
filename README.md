@@ -40,3 +40,9 @@ php -f command.php [command1 [, command2 [, ...]]]
 ```
 chmod 777 logs, app/View/cache
 ```
+
+
+#### マイグレーション
+```
+bin/phpmig status
+```
