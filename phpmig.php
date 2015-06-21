@@ -1,18 +1,20 @@
 <?php
 
-use \Phpmig\Adapter;
+require __DIR__ . '/vendor/autoload.php';
 
-$container = new ArrayObject();
+$config = require CONFIG_PATH . '/database.php';
 
-// replace this with a better Phpmig\Adapter\AdapterInterface
-$container['phpmig.adapter'] = new Adapter\File\Flat(__DIR__ . DIRECTORY_SEPARATOR . 'migrations/.migrations.log');
+$db = new Illuminate\Database\Capsule\Manager;
+$db->addConnection($config);
+$db->setAsGlobal();
+$db->bootEloquent();
+
+$container = new Pimple();
+
+$container['phpmig.adapter'] = function() use ($db) {
+    return new Phpmig\Adapter\Illuminate\Database($db, 'migrations');
+};
 
 $container['phpmig.migrations_path'] = __DIR__ . DIRECTORY_SEPARATOR . 'migrations';
-
-// You can also provide an array of migration files
-// $container['phpmig.migrations'] = array_merge(
-//     glob('migrations_1/*.php'),
-//     glob('migrations_2/*.php')
-// );
 
 return $container;
