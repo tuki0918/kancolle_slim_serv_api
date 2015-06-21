@@ -34,6 +34,8 @@ php -f command.php [command1 [, command2 [, ...]]]
 + monolog/monolog
 + slim/views
 + twig/twig
++ davedevelopment/phpmig
++ pimple/pimple
 
 
 #### パーミッション
