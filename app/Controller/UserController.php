@@ -24,7 +24,7 @@ class UserController extends AppController
 
         $users = User::all();
 
-        echo json_encode($users);
+        echo $users->toJson();
 
     }
 
