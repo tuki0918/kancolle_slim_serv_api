@@ -34,3 +34,9 @@ php -f command.php [command1 [,command2]]
 + monolog/monolog
 + slim/views
 + twig/twig
+
+
+#### パーミッション
+```
+chmod 777 logs, app/View/cache
+```
