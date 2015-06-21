@@ -5,5 +5,7 @@ $app->notFound(function () use ($app) {
 });
 
 $app->error(function (\Exception $e) use ($app) {
+    $msg = $e->getMessage();
+    $app->log->addWarning($msg);
     $app->render('error/500.twig');
 });

@@ -9,6 +9,8 @@ $app->notFound(function () use ($app) {
 
 // Format errors for CLI
 $app->error(function (\Exception $e) use ($app) {
-    echo $e->getMessage();
+    $msg = $e->getMessage();
+    $app->log->addWarning($msg);
+    echo $msg;
     $app->stop();
 });
