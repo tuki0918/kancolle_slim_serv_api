@@ -19,4 +19,13 @@ class UserController extends AppController
 
     }
 
+    public function cli()
+    {
+
+        $users = User::all();
+
+        echo json_encode($users);
+
+    }
+
 }
