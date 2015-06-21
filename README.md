@@ -7,7 +7,7 @@ Slim Framework in Micro MVC
 
 #### コマンドライン：実行
 ```
-php -f command.php [command1 [, command2 [, ...]]]
+bin/run.php [command [, ...]]
 ```
 
 
