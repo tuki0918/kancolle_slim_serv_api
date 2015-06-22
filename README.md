@@ -16,7 +16,7 @@ bin/run.php [command [, ...]]
 	+ app/Route/site.default.php
 	+ app/Route/site.error.php
 	+ app/Route/site.*.php
-+ Command-lLne
++ Command-Line
 	+ app/Route/cli.default.php
 	+ app/Route/cli.error.php
 	+ app/Route/cli.*.php
