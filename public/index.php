@@ -22,12 +22,10 @@ $app->add(new Slim\Middleware\SessionCookie(array(
 require_once CONFIG_PATH . '/application.php';
 
 // application routing setup
-foreach (glob(ROUTE_PATH . '/site.*.php') as $inc) {
-    require_once $inc;
-}
-
-foreach (glob(ROUTE_PATH . '/common.*.php') as $inc) {
-    require_once $inc;
+$extension = array('common.*.php', 'site.*.php');
+$pattern   = '{'.implode(',', $extension).'}';
+foreach (glob(ROUTE_PATH . "/{$pattern}", GLOB_BRACE) as $inc) {
+    if (is_file($inc)) { require_once $inc; }
 }
 
 $app->run();
