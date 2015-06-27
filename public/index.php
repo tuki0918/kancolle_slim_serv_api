@@ -25,7 +25,11 @@ require_once CONFIG_PATH . '/application.php';
 $extension = array('common.*.php', 'site.*.php');
 $pattern   = '{'.implode(',', $extension).'}';
 foreach (glob(ROUTE_PATH . "/{$pattern}", GLOB_BRACE) as $inc) {
-    if (is_file($inc)) { require_once $inc; }
+    if (is_file($inc)) {
+        require_once $inc;
+    } else {
+        $app->log->addInfo('This file could not be loaded.', array('file' => $inc));
+    }
 }
 
 $app->run();
