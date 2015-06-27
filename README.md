@@ -13,10 +13,14 @@ bin/run.php [command [, ...]]
 
 #### ルーティング：読込
 + HTTP/HTTPS
+	+ app/Route/common.default.php
+	+ app/Route/common.*.php
 	+ app/Route/site.default.php
 	+ app/Route/site.error.php
 	+ app/Route/site.*.php
 + Command-Line
+	+ app/Route/common.default.php
+	+ app/Route/common.*.php
 	+ app/Route/cli.default.php
 	+ app/Route/cli.error.php
 	+ app/Route/cli.*.php
