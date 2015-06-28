@@ -10,6 +10,7 @@
     },
     "autoload": {
         "files": [
+            "app/Config/config.php",
             "app/Config/define.php",
             "app/Config/iniset.php",
             "app/Config/eloquent.php"
