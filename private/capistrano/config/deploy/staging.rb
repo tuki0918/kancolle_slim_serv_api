@@ -1,7 +1,7 @@
 set :stage, :staging
 set :branch, 'development'
 
-set :deploy_to, '/var/www/html/deploy'
+set :deploy_to, "/var/www/#{fetch :application}_deploy"
 
 server 'localhost', roles: %w{app}, ssh_options: {
     port: 22,
