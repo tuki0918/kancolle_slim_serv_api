@@ -16,10 +16,11 @@ define('APP_COOKIE_EXPIRES'   , '20 minutes');
 // Directory Path
 define('BASE_PATH'     , realpath(__DIR__ . '/../..'));
 define('APP_PATH'      , BASE_PATH . '/app');
-define('LOGS_PATH'     , BASE_PATH . '/logs');
 define('CONFIG_PATH'   , APP_PATH  . '/Config');
 define('ROUTE_PATH'    , APP_PATH  . '/Route');
 define('VIEW_PATH'     , APP_PATH  . '/View');
+define('TMP_PATH'      , APP_PATH  . '/tmp');
+define('LOGS_PATH'     , TMP_PATH  . '/logs');
 define('PUBLIC_PATH'   , '/public');
 
 // File Path

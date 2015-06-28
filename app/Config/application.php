@@ -21,7 +21,7 @@ $app->config('view', new Slim\Views\Twig());
 
 $app->view->parserOptions = array(
     'debug' => true,
-    'cache' => VIEW_PATH . '/cache'
+    'cache' => TMP_PATH . '/cache'
 );
 
 $app->view->parserExtensions = array(

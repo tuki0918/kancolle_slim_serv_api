@@ -1,4 +1,4 @@
-app/View/cache
 vendor
-logs
 migrations/.migrations.log
+app/tmp/logs
+app/tmp/cache
