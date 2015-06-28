@@ -36,7 +36,7 @@ namespace :deploy do
       dirs = fetch(:tmp_dirs)
       if dirs.is_a?(Array)
         dirs.each do |d|
-          path = current_path.join(d)
+          path = release_path.join(d)
           if test "[ ! -d #{path} ]"
             execute "mkdir -p #{path}"
           end
@@ -46,6 +46,16 @@ namespace :deploy do
     end
   end
 
+  desc "Composer Install"
+  task :composer_install do
+    on roles(:app) do
+      within release_path do
+        execute "cd #{release_path} && composer install"
+      end
+    end
+  end
+
 end
 
 after 'deploy:finished', 'deploy:fix_premission'
+after 'deploy:finished', 'deploy:composer_install'
