@@ -13,16 +13,10 @@ bin/run.php [command [, ...]]
 
 #### ルーティング：読込
 + HTTP/HTTPS
-	+ app/Route/common.default.php
 	+ app/Route/common.*.php
-	+ app/Route/site.default.php
-	+ app/Route/site.error.php
 	+ app/Route/site.*.php
 + Command-Line
-	+ app/Route/common.default.php
 	+ app/Route/common.*.php
-	+ app/Route/cli.default.php
-	+ app/Route/cli.error.php
 	+ app/Route/cli.*.php
 
 
@@ -33,7 +27,6 @@ bin/run.php [command [, ...]]
 #### 設定：環境設定
 + app/Config/define.php
 + app/Config/iniset.php
-+ app/Config/database.php
 
 
 #### サードパーティライブラリ
@@ -48,7 +41,7 @@ bin/run.php [command [, ...]]
 
 #### パーミッション
 ```
-chmod 777 logs, app/View/cache
+chmod 777 app/tmp/logs, app/tmp/cache
 ```
 
 
@@ -75,3 +68,12 @@ bin/phpmig rollback -t [MigrationID]
 // 指定のMigrationIDのみをマイグレーション/ロールバック
 bin/phpmig [up|down] [MigrationID]
 ```
+
+
+#### デプロイ（Capistrano v3）
++ Usage: [capistrano/capistrano](https://github.com/capistrano/capistrano)
+```
+cd private/capistrano
+bundle exec cap production deploy
+```
+※ 現状、マイグレーションは自動でしない
