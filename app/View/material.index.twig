@@ -1,0 +1,27 @@
+{% extends "common/base.html" %}
+
+{% block title %}User/index{% endblock %}
+
+
+{% block head %}
+{{ parent() }}
+    <style type="text/css">
+    </style>
+{% endblock %}
+
+
+{% block content %}
+<ul>
+
+{% for material in materials %}
+
+    <li>{{ material.fuel|e }}</li>
+    <li>{{ material.ammo|e }}</li>
+    <li>{{ material.steel|e }}</li>
+    <li>{{ material.bauxite|e }}</li>
+    <li>{{ material.created_at|e }}</li>
+
+{% endfor %}
+
+</ul>
+{% endblock %}
