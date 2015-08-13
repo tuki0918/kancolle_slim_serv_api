@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'slim-micro-mvc'
+set :application, 'kancolle_slim_serv_api'
 set :repo_url, "git@github.com:tuki0918/#{fetch :application}.git"
 
 # Default value for :format is :pretty
@@ -50,7 +50,7 @@ namespace :deploy do
   task :composer_install do
     on roles(:app) do
       within release_path do
-        execute "cd #{release_path} && composer install"
+        execute :composer, 'install'
       end
     end
   end
