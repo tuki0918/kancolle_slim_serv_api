@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Material;
+use App\Model\Item;
 
 class MaterialController extends AppController
 {
@@ -26,8 +27,9 @@ class MaterialController extends AppController
         $m = $this->app->request()->post('materials');
         $m = @json_decode($m, true);
 
+        $ipAddress = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
+
         if (isset($m['fuel'], $m['ammo'], $m['steel'], $m['bauxite'])) {
-            $ipAddress = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
             $material = new Material;
             $material->ip      = $ipAddress;
             $material->fuel    = $m['fuel'];
@@ -37,6 +39,15 @@ class MaterialController extends AppController
             $material->save();
         }
 
+        if (isset($m['item05'], $m['item06'], $m['item07'], $m['item08'])) {
+            $item = new Item;
+            $item->ip     = $ipAddress;
+            $item->item05 = $m['item05'];
+            $item->item06 = $m['item06'];
+            $item->item07 = $m['item07'];
+            $item->item08 = $m['item08'];
+            $item->save();
+        }
 
     }
 
