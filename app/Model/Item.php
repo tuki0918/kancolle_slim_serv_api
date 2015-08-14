@@ -10,4 +10,5 @@ class Item extends Model {
 
     protected $hidden = array('ip');
 
+    public $timestamps = false;
 }
