@@ -10,7 +10,9 @@ class MaterialController extends AppController
     public function index()
     {
 
-        $materials = Material::all();
+        $materials = Material::orderBy('id', 'desc')
+            ->take(100)
+            ->get();
 
         $this->app->render(
             'material.index.twig',
