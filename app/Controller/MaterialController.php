@@ -49,6 +49,13 @@ class MaterialController extends AppController
             $item->save();
         }
 
+        $response = $this->app->response();
+        $response['Access-Control-Allow-Origin'] = '*';
+        $response['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept';
+        $response['Content-Type'] = 'application/json';
+        $response->status(200);
+        $response->body(json_encode($m));
+
     }
 
     public function cli()
