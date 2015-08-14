@@ -6,22 +6,51 @@
 {% block head %}
 {{ parent() }}
     <style type="text/css">
+.material-table {
+    border-collapse: collapse;
+    border: 1px solid #666666;
+}
+
+.material-table th,
+.material-table td {
+    border: 1px solid #666666;
+    padding: 2px 4px;
+}
+
+.material-table th {
+    text-align: center;
+}
+
+.material-table td {
+    padding: 2px 6px;
+    text-align: right;
+}
     </style>
 {% endblock %}
 
 
 {% block content %}
-<ul>
+<table class="material-table">
+
+    <tr>
+    <th>更新時間</th>
+    <th>燃焼</th>
+    <th>弾薬</th>
+    <th>鋼材</th>
+    <th>ボーキ</th>
+    </tr>
 
 {% for material in materials %}
 
-    <li>{{ material.fuel|e }}</li>
-    <li>{{ material.ammo|e }}</li>
-    <li>{{ material.steel|e }}</li>
-    <li>{{ material.bauxite|e }}</li>
-    <li>{{ material.created_at|e }}</li>
+    <tr>
+    <td>{{ material.created_at|e }}</td>
+    <td>{{ material.fuel|e }}</td>
+    <td>{{ material.ammo|e }}</td>
+    <td>{{ material.steel|e }}</td>
+    <td>{{ material.bauxite|e }}</td>
+    </tr>
 
 {% endfor %}
 
-</ul>
+</table>
 {% endblock %}
