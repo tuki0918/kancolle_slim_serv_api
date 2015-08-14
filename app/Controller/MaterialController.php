@@ -21,6 +21,25 @@ class MaterialController extends AppController
 
     }
 
+    public function save()
+    {
+        $m = $this->app->request()->post('materials');
+        $m = @json_decode($m, true);
+
+        if (isset($m['fuel'], $m['ammo'], $m['steel'], $m['bauxite'])) {
+            $ipAddress = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
+            $material = new Material;
+            $material->ip      = $ipAddress;
+            $material->fuel    = $m['fuel'];
+            $material->ammo    = $m['ammo'];
+            $material->steel   = $m['steel'];
+            $material->bauxite = $m['bauxite'];
+            $material->save();
+        }
+
+
+    }
+
     public function cli()
     {
 

@@ -14,4 +14,8 @@ $app->group('/materials', function () use ($app) {
         (new App\Controller\MaterialController($app))->index();
     });
 
+    $app->post('/save', function() use ($app) {
+        (new App\Controller\MaterialController($app))->save();
+    });
+
 });
