@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\Material;
 use App\Model\Item;
+use App\Model\Comment;
 
 class MaterialController extends AppController
 {
