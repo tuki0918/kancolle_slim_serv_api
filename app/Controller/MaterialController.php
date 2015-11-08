@@ -49,6 +49,12 @@ class MaterialController extends AppController
             $item->save();
         }
 
+        if (isset($m['comment'])) {
+            $comment = new Comment;
+            $comment->comment = $m['comment'];
+            $comment->save();
+        }
+
         $response = $this->app->response();
         $response['Access-Control-Allow-Origin'] = '*';
         $response['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept';
