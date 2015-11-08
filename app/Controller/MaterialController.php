@@ -52,6 +52,7 @@ class MaterialController extends AppController
 
         if (isset($m['comment'])) {
             $comment = new Comment;
+            $comment->ip      = $ipAddress;
             $comment->comment = $m['comment'];
             $comment->save();
         }
